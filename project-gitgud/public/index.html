@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project GitGud</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Project GitGud</h1>
+   
+  </header>
+
+  <main>
+    <section id="about" class="tab-content active">
+      <div class="vibrant-banner">
+        <h2>Welcome to Project GitGud!</h2>
+        <p>Manage your tech projects effortlessly and collaborate with your friends.</p>
+      </div>
+      <nav>
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="my-projects">My Projects</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
+      </nav>
+    </section>
+
+    <section id="my-projects" class="tab-content">
+      <div id="projects-list">
+        <button id="toggle-add-project">+ Adaugă proiect</button>
+        <div id="new-project" class="hidden">
+          <input type="text" id="project-title" placeholder="Titlu proiect" />
+          <textarea id="project-code" placeholder="Codul proiectului"></textarea>
+          <button id="add-project-btn">Salvează proiectul</button>
+        </div>
+
+        <div id="projects-container"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h2>Contactează-ne</h2>
+      <p>Email: contact@projectgitgud.com</p>
+      <p>Telefon: +40 123 456 789</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

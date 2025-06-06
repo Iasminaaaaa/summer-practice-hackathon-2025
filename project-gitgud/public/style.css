@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 70%);
+
+  color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px rgba(255 255 255 / 0.2);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #ffdd59;
+  text-shadow:
+    0 0 7px #ffdd59,
+    0 0 20px #ffdd59,
+    0 0 40px #ffdd59;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav button.tab-btn {
+  background: linear-gradient(270deg, #ff416c, #ff4b2b, #ff416c);
+  background-size: 600% 600%;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  margin: 0 8px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: background-position 0.8s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 75, 43, 0.6);
+  filter: drop-shadow(0 0 2px #ff4b2b);
+  user-select: none;
+  letter-spacing: 1.5px;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+nav button.tab-btn:hover {
+  box-shadow:
+    0 0 15px #ff4b2b,
+    0 0 30px #ff416c,
+    0 0 50px #ff416c;
+  transform: scale(1.05);
+}
+
+nav button.tab-btn.active {
+  background: linear-gradient(270deg, #ffec59, #ffcc00, #ffec59);
+  background-size: 600% 600%;
+  color: #1a1a1a;
+  box-shadow:
+    0 0 15px #ffcc00,
+    0 0 40px #ffec59,
+    0 0 60px #ffec59;
+  animation: gradientShiftYellow 8s ease infinite;
+}
+
+@keyframes gradientShiftYellow {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* TAB CONTENT */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.vibrant-banner {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  user-select: none;
+  top:100px;
+  
+  margin-bottom:px;
+}
+
+@keyframes pulseBanner {
+  0% {
+    box-shadow:
+      0 0 20px #ff4b2b,
+      0 0 60px #ff416c;
+  }
+  100% {
+    box-shadow:
+      0 0 30px #ff4b2b,
+      0 0 80px #ff416c;
+  }
+}
+
+#toggle-add-project {
+  background: linear-gradient(270deg, #11998e, #38ef7d, #11998e);
+  background-size: 600% 600%;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 0 12px #38ef7d;
+  transition: background-position 2s ease, box-shadow 0.3s ease;
+  animation: pulseButton 3s ease infinite;
+  user-select: none;
+}
+
+#toggle-add-project:hover {
+  box-shadow:
+    0 0 25px #38ef7d,
+    0 0 40px #11998e;
+  transform: scale(1.07);
+}
+
+@keyframes pulseButton {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+#new-project.hidden {
+  display: none;
+}
+
+#new-project input, #new-project textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0 0 0 / 0.3);
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+}
+
+#add-project-btn {
+  padding: 15px 25px;
+  background: linear-gradient(270deg, #ff416c, #ff4b2b);
+  background-size: 600% 600%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px #ff4b2b;
+  transition: background-position 2s ease, box-shadow 0.3s ease;
+  user-select: none;
+  margin-top: 8px;
+  animation: pulseButton 3s ease infinite;
+}
+
+#add-project-btn:hover {
+  box-shadow:
+    0 0 25px #ff4b2b,
+    0 0 40px #ff416c;
+  transform: scale(1.05);
+}
+
+/* Proiecte card */
+.project {
+  background: rgba(255 255 255 / 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow:
+    0 0 8px rgba(255 255 255 / 0.15),
+    0 0 20px rgba(255 75 43 / 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 12px rgba(255 75 43 / 0.6),
+    0 0 35px rgba(255 75 43 / 0.6);
+}
+
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  text-shadow:
+    0 0 6px #ffcc00,
+    0 0 12px #ffcc00;
+}
+
+.project-code {
+  background: rgba(0 0 0 / 0.7);
+  color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+/* Comentarii */
+.comments {
+  background: rgba(255 255 255 / 0.08);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.comments h4 {
+  margin: 0 0 10px 0;
+  color: #ffcc00;
+  text-shadow:
+    0 0 4px #ffcc00;
+}
+
+.comments-list {
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.comment {
+  padding: 6px 8px;
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.comment-input textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 40px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0 0 0 / 0.3);
+  font-family: 'Roboto', sans-serif;
+}
+
+.comment-input button {
+  background: linear-gradient(270deg, #ffcc00, #ffec59);
+  border: none;
+  color: #1a1a1a;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 0 12px #ffec59;
+  transition: box-shadow 0.3s ease;
+  margin-top: 5px;
+  user-select: none;
+}
+
+.comment-input button:hover {
+  box-shadow:
+    0 0 25px #ffcc00,
+    0 0 40px #ffec59;
+  transform: scale(1.05);
+}
